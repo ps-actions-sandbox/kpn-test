@@ -16,6 +16,6 @@ runs:
   - run: echo My name is ${{ inputs.your-name }}
     shell: bash
   - id: current-time
-    run: echo "time='11.13';" >> $GITHUB_OUTPUT
+    run: echo "time='11.13'" >> $GITHUB_OUTPUT
     shell: bash
     
