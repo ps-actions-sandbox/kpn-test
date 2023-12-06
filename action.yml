@@ -1,0 +1,21 @@
+name: 'Hello world'
+description: 'Greet the world'
+
+inputs:
+  your-name:
+    description: 'Your name'
+    required: true
+outputs:
+  time:
+    description: 'The current time'
+    value: ${{ steps.current-time.outputs.time }}
+
+runs:
+  using: "composite"
+  steps:
+  - run: echo My name is ${{ inputs.your-name }}
+    shell: bash
+  - id: current-time
+    run: echo "time='11.13';" >> $GITHUB_OUTPUT
+    shell: bash
+    
